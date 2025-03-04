@@ -1,201 +1,117 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Rajvardhan</title>
     <style>
-        /* Print Optimization - Compact Layout with Borders */
-@media print {
-    body {
-        padding: 5px !important;
-        font-size: 11px;
-        line-height: 1.2;
-        background: white !important;
-        color: black !important;
-        animation: none !important;
-    }
+        :root {
+            --bg-light: white;
+            --text-light: black;
+            --bg-dark: #121212;
+            --text-dark: #e0e0e0;
+            --accent: #ff9800;
+        }
 
-    h2:first-of-type {
-        font-size: 20px !important;
-        margin-bottom: 4px !important;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--bg-light);
+            color: var(--text-light);
+            padding: 20px;
+            transition: background 0.5s, color 0.5s;
+        }
 
-    h2 {
-        font-size: 14px !important;
-        margin-top: 8px !important;
-        padding-bottom: 2px !important;
-    }
+        .dark-mode {
+            background: var(--bg-dark);
+            color: var(--text-dark);
+        }
 
-    h3 {
-        font-size: 12px !important;
-        margin-top: 6px !important;
-    }
+        h2, h3 {
+            transition: color 0.3s;
+        }
 
-    p[dir="ltr"] {
-        font-size: 10px !important;
-        margin-bottom: 6px !important;
-    }
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
 
-    ul {
-        margin-bottom: 3px !important;
-        padding-left: 12px !important;
-    }
+        a:hover {
+            text-decoration: underline;
+            color: #ff5722;
+        }
 
-    li {
-        margin-bottom: 2px !important;
-        page-break-inside: avoid;
-    }
+        section {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
 
-    #technical-skills ul {
-        columns: 1 !important;
-    }
+        section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
 
-    #technical-skills li,
-    #certifications li {
-        background-color: transparent !important;
-        box-shadow: none !important;
-        padding: 1px 3px !important;
-    }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease-in-out forwards;
+        }
 
-    /* Remove animations for print */
-    * {
-        animation: none !important;
-        transition: none !important;
-    }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    /* Add borders to sections */
-    #education,
-    #technical-skills,
-    #projects,
-    #internship-experience,
-    #certifications {
-        margin: 5px 0 !important;
-        padding: 5px !important;
-        border: 1px solid black !important;
-        border-radius: 3px !important;
-    }
+        .toggle-container {
+            text-align: right;
+            margin-bottom: 10px;
+        }
 
-    /* Compact contact info */
-    p[dir="ltr"] span {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 3px;
-    }
+        .toggle-button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
 
-    /* Hide decorative elements */
-    a::after {
-        content: "" !important;
-    }
-    
-    /* URL formatting */
-    a[href^="http"]:after {
-        content: " (" attr(href) ")";
-        font-size: 0.8em;
-        font-weight: normal;
-    }
-
-    /* Force content to fit in one page */
-    html, body {
-        height: auto !important;
-        max-height: 100% !important;
-    }
-}
-
-        </style>
-
+        .toggle-button:hover {
+            background: #ff5722;
+        }
+    </style>
 </head>
-    <!-- Name & Contact Details -->
-    <h2>Rajvardhan</h2>
-    <p dir="ltr">
-        Noida UP | rajvardhan630@gmail.com | +91 6306387821 | 
+<body>
+    <div class="toggle-container">
+        <button class="toggle-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </div>
+
+    <h2 class="fade-in">Rajvardhan</h2>
+    <p class="fade-in">Noida, UP | rajvardhan630@gmail.com | +91 6306387821 | 
         <a href="https://www.linkedin.com/in/raj-vardhan-4b4121219">LinkedIn</a> | 
         <a href="https://github.com/Rajvardhan-1">GitHub</a>
     </p>
-    <h2><b><strong>Objective</strong></b></h2>
-    <p dir="ltr"><span> Eager B.Tech CSE graduate from Graphic Era University (2023) actively honing skills in Java Full Stack development through training at Ducat IT Training. Passionate about leveraging technology to solve real-world problems. Seeking entry-level opportunities to apply knowledge and contribute to innovative projects in the tech industry.</span></p>
 
-    <!-- Education Details -->
-    <h2><b><strong>Education</strong></b></h2>
-    <p dir="ltr"><span>Bachelor of technology in Computer Science</span></p>
-    <p dir="ltr"><i><em class="GFGEditorTheme__textItalic">Graphic Era University, Dehradun, Uttrakhand </em></i></p>
-    <ul>
-        <li value="1"><span> Graduation: jun 2023 </span></li>
-        <li value="2"><span>Relevant Courses: Software Engineering, Data Structures, Algorithms, Database Management</span></li>
-    </ul>
+    <section class="fade-in">
+        <h2>Objective</h2>
+        <p>Eager B.Tech CSE graduate from Graphic Era University (2023)...</p>
+    </section>
 
-    <!-- Technical Details -->
-    <h2><b><strong>Technical Skills</strong></b></h2>
-    <ul>
-        <li value="1"><span>Programming Languages:  Java, Python, C++ </span></li>
-        <li value="2"><span>Web Technologies: HTML, CSS, JavaScript, Reactjs </span></li>
-        <li value="3"><span>Database Systems: databases, e.g., MySQL, MongoDB </span></li>
-        
-        <li value="5"><span>Version Control:  Git </span></li>
-                
-        <li value="7"><span>Operating Systems:  Linux, Windows </span></li>
-    </ul>
+    <section class="fade-in">
+        <h2>Education</h2>
+        <p>Bachelor of Technology in Computer Science</p>
+        <p>Graphic Era University, Dehradun, Uttarakhand</p>
+    </section>
 
-    <!-- Projects -->
-    <h2><b><strong>Projects</strong></b></h2>
-    <h3><b><strong>Aspect-Based Music Recommendation System Using CNN </strong></b></h3>
-    <ul>
-        <li value="1"><span>Uses CNNs to analyze facial expressions and suggest music.</span></li>
-        <li value="2"><span> Developed in Python to capture emotions like happiness, sadness, and excitement.</span></li>
-        <li value="3"><span> Trains the CNN model to recognize patterns and match them with music genres or playlists.</span></li>
-        <li value="3"><span> Provides personalized music recommendations based on emotional state</span></li>
-        <li value="3"><span>  Frontend built with the Flask framework.</span></li>
-    </ul>
-    <h3><b><strong>E-commerce Website Development</strong></b></h3>
-    <ul>
-        <li value="1"><span> Created a Hospital Management System using Java’s OOPs (Object-Oriented Programming) concepts and 
-SQL for patient data management..</span></li>
-        <li value="2"><span> Implemented functionalities for insertion, updating, and deletion of patient data within database tables.</span></li>
-        <li value="3"><span>IEnhanced the system to streamline hospital operations and improve data accessibility.</span></li>
-    </ul>
-
-    <!-- Work Experience -->
-    <h2><b><strong>Internship Experience</strong></b></h2>
-    <h3><b><strong> Full stack web Daveloper
- | Main FLow Services and Technology , Noida , U.P. | Oct 2024 - Dec 2024 </strong></b></h3>
-    <ul>
-        <li value="1"><span>Designed and implemented responsive web applications using modern JavaScript frameworks such as React and Angular.</span></li>
-        <li value="2"><span>Managed database systems, including MySQL and MongoDB, ensuring data integrity and implementing data migration strategies.
-</span></li>
-        <li value="3"><span>Utilized version control systems like Git for source code management, ensuring a clear and efficient workflow among team members.</span></li>
-    </ul>
-    
-    <h3><b><strong> Java FullStack Developer
- | Pentakod , Noida , U.P. | May 2024 - Jul 2024 </strong></b></h3>
-    <ul>
-        <li value="1"><span> Developed and maintained scalable Java applications using Spring Framework and Hibernate.</span></li>
-        <li value="2"><span> Participated in code reviews, enhancing code quality and ensuring adherence to best practices.
-</span></li>
-        <li value="3"><span> Integrated cloud-based services for enhanced functionality and deployment efficiency.
-
-</span></li>
-    </ul>
-<h3><b><strong> Web Daveloper
- | BharatTech Internz , remote | Feb 2024 - Mar 2024 </strong></b></h3>
-    <ul>
-        <li value="1"><span>  Work on real-world development projects.</span></li>
-        <li value="2"><span> • Collaborate with experienced professionals in the field.
-</span></li>
-        <li value="3"><span>  Enhance your development skills and knowledge.
-
-</span></li>
-<li value="3"><span>  Gain hands-on experience with cutting-edge technologies.
-
-</span></li>
-<li value="3"><span>  Be a part of a dynamic and innovative team.
-
-</span></li>
-    </ul>
-
-   
-
-    <h2><b><strong> Certificatoins </strong></b></h2>
-    <ul>
-        <li value="1"><span>Java Full stack web development – DUCAT IT TRAINING | NOIDA  
-</span></li>
-<li value="1"><span> JavaScript and react certificate issued by MICROSOFT LEARN AND DEVTOWN
-</span></li>
-    </ul>
-   
-    
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>
